@@ -7,10 +7,10 @@ export default function Drink({ image, name, id, info, glass }){
             <div className="card mb-3">
                 <img className="card-img-top" src={image} alt={name}></img>
                 <div className="card-body">
-                    <h6>{name}</h6>
-                    <h6>{glass}</h6>
-                    <p className="text-primary">{info}</p>
-                    <Link to={`/drink/${id}`} className="btn btn-primary">
+                    <h6 className="font-weight-bold">{name}</h6>
+                    <p className="text-muted">{glass}</p>
+                    <p className="text-secondary">{info}</p>
+                    <Link to={`/drink/${id}`} className="btn btn-block btn-primary">
                         Details
                     </Link>
                 </div>

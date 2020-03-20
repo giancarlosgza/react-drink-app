@@ -13,7 +13,7 @@
   /*height: 36px;*/
   background-color: $theme-surface;
   color: $theme-on-primary;
-  border-radius: $border-radius-4;
+  border-radius: $border-radius-25;
   border-style: none;
   text-transform: uppercase;
   box-shadow: $shadow-1dp;
@@ -69,18 +69,18 @@
 
 .btn-secondary {
   background-color: $theme-secondary;
-  color: $theme-on-primary;
+  color: $theme-on-primary-inverse;
   border: none !important;
 
   &:hover {
     background-color: $theme-secondary-hover;
-    color: $theme-on-primary;
+    color: $theme-on-primary-inverse;
   }
 
   &:focus,
   &:active {
     background-color: $theme-secondary-active !important;
-    color: $theme-on-primary !important;
+    color: $theme-on-primary-inverse !important;
   }
 }
 

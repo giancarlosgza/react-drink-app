@@ -71,27 +71,61 @@ export default function SingleDrink() {
             ingredients
         } = drink;
         return (
-            <div className="row">
-                <div className="col-md-4">
-                    <Link to="/" className="btn btn-primary">
-                        back home
-                    </Link> 
-                </div>
-                <div className="col-md-12">
-                    <img src={image} alt={name}></img>
-                    <h3>{name}</h3>
-                    <p>name : {name}</p>
-                    <p>category: {category}</p>
-                    <p>info: {info}</p>
-                    <p>glass : {glass}</p>
-                    <p>instructions : {instructions}</p>
-                    <p>
-                    ingredients :{" "}
-                    {ingredients.map((item, index) => {
-                        return item ? <span key={index}>{item}</span> : null;
-                    })}
-                    </p> 
-                </div>
+            <div>
+                <section className="drink-background" style={{backgroundImage: `url(${image})`}}>
+                    <div className="container"> 
+                        <div className="row">
+                            <div className="col-md-4 pt-3">
+                                <Link to="/" className="btn btn-secondary">
+                                    <i className="material-icons">chevron_left</i>
+                                </Link> 
+                            </div>
+                            {/* <div className="col-md-12">
+                                <img src={image} alt={name} className="img-fluid"></img>
+                            </div> */}
+                        </div>
+                    </div>
+                </section>
+                <section className="drink-content">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <h4 className="font-weight-bold text-center text-primary mb-5">{name}</h4>
+                                <h5 className="font-weight-bold text-left">Overview</h5>
+                                <div className="card card-outline my-3">
+                                    <div className="card-body">
+                                        <p><span className="font-weight-bold body-1">Name:</span> {name}</p>
+                                        <p><span className="font-weight-bold body-1">Category:</span> {category}</p>
+                                        <p><span className="font-weight-bold body-1">Info:</span> {info}</p>
+                                        <p><span className="font-weight-bold body-1">Glass:</span> {glass}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-12">
+                            <h5 className="font-weight-bold text-left">Instructions</h5>
+                                <div className="card card-outline my-3">
+                                    <div className="card-body">
+                                        <p className="body-1">{instructions}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-12">
+                            <h5 className="font-weight-bold text-left">Ingredients</h5>
+                                <div className="card card-outline my-3">
+                                    <div className="card-body">
+                                        <p>
+                                            {/* List: {" "} */}
+                                            {ingredients.map((item, index) => {
+                                                return item ? <span key={index}> <br/> <li><a target="_blank" rel="noopener noreferrer" className="body-1 text-capitalize text-secondary"
+                                                href={"https://www.google.com/search?q=" + item }>{item}</a></li></span> : null;
+                                            })}
+                                        </p> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         );
     }
